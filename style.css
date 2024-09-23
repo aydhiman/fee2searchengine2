@@ -1,0 +1,160 @@
+        /* General body styling with background image */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: url('https://images.unsplash.com/photo-1549061753-d4e1920f135e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDIxfHxzZWFyY2glMjBpbWFnZXxlbnwwfHx8fDE2NjUxNjEzNTA&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        /* Gradient overlay */
+        .overlay {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main heading styling */
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        /* Input field styling */
+        input[type="text"] {
+            padding: 12px;
+            width: 350px;
+            border: 2px solid #3498db;
+            border-radius: 25px; /* Rounded corners for search bar */
+            font-size: 16px;
+            outline: none;
+            box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"]:focus {
+            border-color: #2980b9;
+            box-shadow: 0 0 10px rgba(41, 128, 185, 0.6);
+        }
+
+        /* Button styling */
+        button {
+            padding: 12px 24px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 25px; /* Rounded button */
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.2s, box-shadow 0.3s ease;
+            margin: 5px; /* Space between buttons */
+        }
+
+        button:hover {
+            background-color: #1a5b8b;
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Clear button styling */
+        button.clear {
+            background-color: #e74c3c;
+        }
+
+        button.clear:hover {
+            background-color: #c0392b;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table header */
+        thead {
+            background-color: #3498db;
+            color: white;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        td {
+            background-color: #fff;
+        }
+
+        /* Alternate row colors */
+        tr:nth-child(even) td {
+            background-color: #f8f8f8;
+        }
+
+        /* Hover effect for table rows */
+        tr:hover td {
+            background-color: #ecf0f1;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .icon {
+            display: inline-block;
+            margin: 0 10px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .icon img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Responsive design for mobile screens */
+        @media (max-width: 600px) {
+            input[type="text"] {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            button {
+                width: 100%;
+                margin-top: 10px;
+                padding: 12px;
+            }
+
+            form {
+                align-items: stretch;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+        }

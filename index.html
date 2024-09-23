@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Search Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay">
+        <h1>Search Engine</h1>
+        <form id="task-form">
+            <input type="text" id="task-input" placeholder="Search here" required>
+            <div>
+                <button type="submit">Search</button>
+                <button type="button" class="clear">Clear History</button> 
+            </div>
+        </form>
+        
+        <table id="task-table">
+            <thead>
+                <tr>
+                    <th>History</th>
+                </tr>
+            </thead>
+            <tbody id="task-body"> 
+                <tr><td>No search history found.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <h2>Most Searched</h2>
+        <div class="icon">
+            <img src="https://logosmarcas.net/wp-content/uploads/2020/09/Google-Emblema.png" alt="Google">
+        </div>
+        <div class="icon">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.NgKsYHHZ-n2-TFqH989xSQHaEK&pid=Api&P=0&h=220" alt="Yahoo">
+        </div>
+        <div class="icon">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.yNgXeCIKKfhma3QYDs7IRwHaEo&pid=Api&P=0&h=220" alt="Bing">
+        </div>
+        <div class="icon">
+            <img src="https://download.logo.wine/logo/DuckDuckGo/DuckDuckGo-Logo.wine.png" alt="DuckDuckGo">
+        </div>
+    </footer>
+</body>
+</html>

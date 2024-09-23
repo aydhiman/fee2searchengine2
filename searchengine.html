@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>searching engine</h1>
+    <form id="task-form">
+        <input type="text" id="task-input" placeholder="seach here" required>
+        <button type="submit">submit</button>
+        <button type="button" class="clear">clear history</button> 
+    </form>
+    
+    <table id="task-table">
+        <thead>
+            <tr>
+                <th>Task</th>
+            </tr>
+        </thead>
+        <tbody id="task-body"> 
+            <h1>Search History</h1>
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const taskForm = document.getElementById('task-form');
+            const taskInput = document.getElementById('task-input');
+            const taskBody = document.getElementById('task-body');
+            const clearButton = document.querySelector('.clear'); // Select the clear button
+
+            // Load search history from localStorage
+            let search = JSON.parse(localStorage.getItem('search')) || [];
+            rendersearch();
+
+            // Handle form submission for adding new search
+            taskForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const task = {
+                    name: taskInput.value,
+                };
+                search.push(task);
+                localStorage.setItem('search', JSON.stringify(search));
+                rendersearch();
+                taskForm.reset();
+            });
+
+            // Function to render search history
+            function rendersearch() {
+                taskBody.innerHTML = '';
+                if (search.length === 0) {
+                    taskBody.innerHTML = '<tr><td>No search history found.</td></tr>';
+                } else {
+                    search.forEach(task => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = <td>${task.name}</td>;
+                        taskBody.appendChild(row);
+                    });
+                }
+            }
+
+            // Clear search history
+            clearButton.addEventListener('click', () => {
+                search = []; // Clear the search array
+                localStorage.removeItem('search'); // Remove from localStorage
+                rendersearch(); // Re-render the search history
+            });
+        });
+    </script>
+</body>
+</html>
